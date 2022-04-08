@@ -10,17 +10,52 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #7d2ae8;
+    background: #dd580c;
     padding: 30px;
 }
 .container{
+    position: relative;
     max-width: 850px;
     width: 100%;
     background: #fff;
     padding: 40px 30px;
-    box-shadow: 0 5px 10px rgba(0, g0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    perspective: 2700px;
 }
-
+.container .cover{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 50%;
+    z-index: 98;
+    transition: all 1s ease;
+    transform-origin: left;
+    transform-style: preserve-3d;
+}
+.container .cover::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* background: #7d2ae8; */
+    opacity: 0.5;
+    z-index: 100;
+}
+.container #flip:checked ~ .cover{
+    transform: rotateY(-180deg);
+}
+.container .cover img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 12;
+    backface-visibility: hidden;
+}
+.container .cover .text{
+    position: absolute;
+}
 .container form{
     height: 100%;
     width: 100%;
@@ -49,9 +84,9 @@ form .form-content .title::before{
     bottom: 0;
     height: 3px;
     width: 25px;
-    background: #7d2ae8;
+    background: #dd580c;
 }
-form .signup-form .title:before{
+form .signup-form .title::before{
     width: 20px;
 }
 form .form-content .input-boxes{
@@ -78,11 +113,11 @@ form .form-content .input-box{
 }
 .form-content .input-box input:focus,
 .form-content .input-box input:valid{
-    border-color: #7d2ae8;
+    border-color: #dd580c;
 }
 .form-content .input-box i{
     position: absolute;
-    color: #7d2ae8;
+    color: #dd580c;
     font-size: 17px;
 }
 form .form-content .text{
@@ -90,8 +125,11 @@ form .form-content .text{
     font-weight: 500;
     color: #333;
 }
-form .form-content a{
+form .form-content .text a{
     text-decoration: none;
+}
+form .form-content .text a:hover{
+    text-decoration: underline;
 }
 form .form-content .button{
     color: #fff;
@@ -99,12 +137,19 @@ form .form-content .button{
 }
 form .form-content .button input{
     color: #fff;
-    background: #7d2ae8;
+    background: #dd580c;
     border-radius: 6px;
     padding: 0;
     cursor: pointer;
     transition: all 0.4s ease;
 }
 form .form-content .button input:hover{
-    background: #5b13b9;
+    background: #b44505;
+}
+form .form-content label{
+    color: #b44505;
+    cursor: pointer;
+}
+form .form-content label:hover{
+    text-decoration: underline;
 }
