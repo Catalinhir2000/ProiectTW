@@ -83,7 +83,6 @@ a.active, a:hover{
     }
     nav ul li a{
         font-size: 16px;
-
     }
 }
 
@@ -118,10 +117,49 @@ a.active, a:hover{
     }
 }
 
-section{
+#showcase{
     background-image: url('images/background.png');
     background-position: center;
     background-repeat: no-repeat;
     height: calc(100vh - 80px);
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 20px;
+    align-items: center;
+}
+
+#showcase .button{
+    outline: none;
+    color: #001122;
+    background: #F7770F;
+    border: none;
+    font-size: 1.5em;
+    font-weight: 500;
+    border-radius: 10px;
+}
+
+#showcase h2{
+    font-size: 3.5em;
+}
+
+#showcase h4{
+    font-size: 1.8em;
+}
+
+#showcase .button:hover{
+    background: orange;
+}
+
+@media (max-width: 850px){
+    #showcase h2{
+        font-size: 2.2em; 
+    }
+    #showcase h4{
+        font-size: 1.3em; 
+    }
+    #showcase .button{
+        font-size: 1em;
+    }
 }
