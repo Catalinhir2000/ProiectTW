@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>Scholarly HTML</title>
+  </head>
+
+  <body prefix="schema: http://schema.org">
+    <header>
+      <div class="banner">
+        <a class="logo" href="mainPage.html"> Main Page</a>
+
+        <div class="status">
+          <b>CyMaT(Cycling Maintenance Web Tool) - Documentation </b>
+        </div>
+      </div>
+
+      <h1>Interfața și arhitectura proiectului</h1>
+    </header>
+    <div role="contentinfo">
+      <dl>
+        <dt>Autori</dt>
+        <dd>Hirean Cătălin Alexandru și Sîrcu Cătălin Alexandru</dd>
+        <dt>GitHub</dt>
+        <dd>
+          <a href="https://github.com/Catalinhir2000/ProiectTW"
+            >Link către repository-ul proiectului</a
+          >
+        </dd>
+        <dt>Tehnologii folosite</dt>
+        <dd>HTML, CSS, PHP</dd>
+        <dt>
+          Proiect realizat în cadrul cursului "Tehnologii Web" de la Facultatea
+          de Informatică, Universitatea "Al. I. Cuza" Iași.
+        </dt>
+      </dl>
+    </div>
+
+    <section id="abstract" typeof="sa:Abstract" role="doc-abstract">
+      <h2>Cerința</h2>
+      <p></p>
+      <b>CyMaT (Cycling Maintenance Web Tool)</b>
+      <br />
+      <p>
+        Creați un sistem online de management al programărilor și stocurilor unui operatii de service de motociclete, biciclete, trotinete (electrice sau nu). <br>
+        Fiecare client va consulta calendarul service-ului, iar apoi va completa un formular cu data și ora dorită, plus detalii despre problemă, putând adăuga inclusiv fișiere multimedia (imagini și filme). <br>
+        Administratorul afacerii va putea respinge programarea adăugând un mesaj explicativ: "Ne pare rău, dar nu avem în stoc piesele necesare pentru reparație, reveniți în S săptămâni" sau o va putea aproba, oferind și un preț estimativ, plus alte detalii de interes. <br>
+        De asemenea, aplicația îi va permite acestuia să țină evidența stocurilor existente, cât și a comenzilor date către furnizori. Sistemul va putea importa date în format CSV și JSON. Pentru exportul datelor, se va recurge la oricare dintre formatele CSV, JSON, PDF. Bonus: simularea activitatii service-ului pe o perioada de timp: luni/ani. <br>
+      </p>
+      <p></p>
+    </section>
+    <section id="dataBase">
+      <h2>Baza de date</h2>
+      <p>Va fi folosită pentru evidența conturilor, programărilor și pentru produsele care se află în secțiunea "Stock".</p>
+    </section>
+    <section id="cont">
+      <h2>Profilul unui utilizator</h2>
+      <p>CyMaT va avea pe viitor o secțiune pentru profilul utilizatorul în care vor fi afișate datele acestuia și istoricul său de programări.</p>
+    </section>
+    <section id="home">
+      <h2>Pagina principală(Home)</h2>
+      <p>Utilizatorul poate sa acceseze celelalte pagini(Booking, Stock, Login).</p>
+    </section>
+    <section id="booking">
+      <h2>Pagina Booking</h2>
+      <p>Utilizatorul va trebui să completeze un formular prin care acesta își introduce datele, atât fișiere media de tip .png și .jpg pentru a semnala problemele pe care le întâmpină la vehiculul său, cât și o rubrică de informații suplimentare care nu este obligatorie.
+      <br> În momentul în care apasă pe butonul de a face rezervarea, acesta va fi introdus în baza de date și va aștepta o confirmare de la admin.</p>
+      <p>Adminul în pagina de booking va avea o listă a utilizatorilor care și-au făcut programare, listă care va fi furnizată de baza de date, iar adminul va putea să respingă programarea sau să o accepte.</p>
+    </section>
+    <section id="stock">
+      <h2>Pagina Stock</h2>
+      <p>Utilizatorul va putea să consulte starea depozitului de piese moto, cât și de consumabile.</p>
+      <p>Adminul în această pagină de Stock, va avea un buton prin care acestuia i se va permite să adauge un produs.</p>
+    </section>
+    <section id="login">
+      <h2>Login</h2>
+      <p>Logarea se poate face cu E-mail și parolă unice.</p>
+      <p>Aceasta nu este permisă dacă nu sunt completate toate câmpurile prezente în mod corect.</p>
+      <p>De asemenea, vor fi două categorii speciale de utilizatori, anume: cont de admin și cont de utilizator obișnuit.</p>
+      <p>Adminul va avea la dispoziție mai multe facilități prin care îi va face posibilă interecțiunea cu utilizatorii site-ului.</p>
+    </section>
+    <section id="inreg">
+      <h2>Înregistrarea</h2>
+      <p>Înregistrarea se face respectând cerințele în care se introduce un username, E-mail și o parolă și pentru a putea fi siguri că utilizatorul a introdus parola pe care o dorea, mai este un câmp pentru repetarea parolei.
+      <br> După introducerea datelor corecte, utilizatorul va fi nevoit să introducă datele de conectare în secțiunea Login.</p>
+    </section>
+  </body>
+</html>
