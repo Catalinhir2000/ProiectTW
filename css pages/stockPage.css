@@ -1,10 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap');
+
 *{
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
+	list-style: none;
+	font-family: 'Poppins', sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
     text-decoration: none;
-    box-sizing: border-box;
-    scroll-padding-top: 1rem;
+}
+
+body{
+
+	background: #F7770F;
+    
 }
 
 nav{
@@ -83,6 +91,7 @@ a.active, a:hover{
     }
     nav ul li a{
         font-size: 16px;
+
     }
 }
 
@@ -117,49 +126,64 @@ a.active, a:hover{
     }
 }
 
-#showcase{
-    background-image: url('images/background.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    height: calc(100vh - 80px);
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 20px;
+.view_item img{
+	width: 75px;
+}
+
+.wrapper{
+	display: flex;
     align-items: center;
+    justify-content: center;
+	width: 80%;
+	margin: 20px auto;
 }
 
-#showcase .button{
-    outline: none;
-    color: #001122;
-    background: #F7770F;
-    border: none;
-    font-size: 1.5em;
-    font-weight: 500;
-    border-radius: 10px;
+
+.view_main{
+	background: #fff;
+	border-radius: 3px;
+	padding: 15px;
 }
 
-#showcase h2{
-    font-size: 3.5em;
+.list-view .view_item {
+	background: #fff;
+	border: 1px solid #e2efe1;
+	margin: 10px;
+	padding: 10px 20px;
+	display: flex;
+	align-items: center;
 }
 
-#showcase h4{
-    font-size: 1.8em;
+.list-view .view_item:last-child{
+	margin-bottom: 0;
 }
 
-#showcase .button:hover{
-    background: orange;
+.list-view .view_item .vi_left{
+	margin-right: 25px;
 }
 
-@media (max-width: 850px){
-    #showcase h2{
-        font-size: 2.2em; 
-    }
-    #showcase h4{
-        font-size: 1.3em; 
-    }
-    #showcase .button{
-        font-size: 1em;
-    }
+.view_item .title{
+	font-weight: 600;
+}
+
+.view_item .content{
+	margin: 5px 0;
+	font-size: 14px;
+	line-height: 22px;
+	font-weight: 200;
+}
+
+.view_item .btn{
+	width: 125px;
+	background: #F7770F;
+	padding: 8px 5px;
+	border-radius: 3px;
+	color: #fff;
+	text-align: center;
+	font-weight: 200;
+	cursor: pointer;
+}
+
+.view_item .btn:hover{
+	background: #fd943e;
 }

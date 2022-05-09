@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>CyMaT</title>
     <link rel="shortcut icon" type="image/png" href="images/screwdriver-wrench-solid.svg">
-    <link rel="stylesheet" type="text/css" href="bookingPage.css">
+    <link rel="stylesheet" type="text/css" href="css pages/bookingPage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,10 +19,10 @@
         </label>
       <label class = "logo">Cy<span>MaT</span></label>
       <ul>
-        <li><a class ="active" href ="mainPage.html">Home</a></li>
-        <li><a href ="bookingPage.html">Booking</a></li>
-        <li><a href ="stockPage.html">Stock</a></li>
-        <li><a href ="signInPage.html">Log In</a></li>
+        <li><a class ="active" href ="mainPage.php">Home</a></li>
+        <li><a href ="bookingPage.php">Booking</a></li>
+        <li><a href ="stockPage.php">Stock</a></li>
+        <li><a href ="signInPage.php">Log In</a></li>
       </ul>
     </nav>
     <div class ="interior">
