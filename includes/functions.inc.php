@@ -97,4 +97,47 @@ function createUser($conn, $name, $username, $email, $password){
        exit();
 }
 
- 
+
+function emptyInputLogin($username, $password){
+    global $result;
+    if (empty($username) || empty($password)){
+        $result = true;
+    }
+    else{
+        $result = false;
+    }
+    return $result;
+}
+
+function console_log( $data ){
+    echo '<script>';
+    echo 'console.log('. json_encode( $data ) .')';
+    echo '</script>';
+  }
+
+function loginUser($conn, $username, $password) {
+    $usernameTaken = usernameTaken($conn, $username);
+    if ($usernameTaken === false){
+        header("location: ../signInPage.php?error=wrongLogin");
+        exit();
+
+    }
+
+    $hashedPassword = $usernameTaken["userPwd"];
+    $checkPassword = password_verify($password, $hashedPassword);
+
+    if ($checkPassword === false){
+      header("location: ../signInPage.php?error=wrongLogin2");
+      exit();
+     //console_log($password);
+     //console_log($hashedPassword);
+     //console_log($checkPassword);
+    }
+     else if ($checkPassword === true){
+        session_start();
+        $_SESSION["userid"] = $usernameTaken["userId"];
+        $_SESSION["useruid"] = $usernameTaken["userUid"];
+        header("location: ../mainPage.php");
+        exit();
+    }
+}     
