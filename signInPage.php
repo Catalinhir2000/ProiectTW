@@ -41,6 +41,19 @@
               </div>
               <div class="text sign-up-text">Don't have an account? <label for="flip">Signup now</label></div>
             </div>
+            <?php
+              if(isset($_GET["error"])){
+                  if($_GET["error"] == "wrongLogin"){
+                      echo "<p style = 'color:red'>Incorrect login info!</p>";
+                  }
+                  else if($_GET["error"] == "emptyInputAtLogin"){
+                    echo "<p style = 'color:red'>Fill in the required fields!</p>";
+                  }
+                  else if($_GET["error"] == "wrongLogin2"){
+                    echo "<p style = 'color:red'>Different passwords the normal and hashed one, this is a database problem</p>";
+                  }
+              }
+            ?>
         </form>
       </div>
         <div class="signup-form">
