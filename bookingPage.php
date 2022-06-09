@@ -78,6 +78,22 @@
                 <div class = "button">
                     <input type ="submit" value = "Book now" name = "BookNow">
                 </div>
+                <?php
+              if(isset($_GET["error"])){
+                  if($_GET["error"] == "statementFailed"){
+                    echo "<p align='center'>Something went wrong when trying to submit the booking request, please try again!</p>";
+                  }
+                  else if($_GET["error"] == "none"){
+                    echo "<p align='center'>You have sent your request for a booking!</p>";
+                  }
+                  else if($_GET["error"] == "sizeTooBig"){
+                    echo "<p align='center'>The size of the image you uploaded is too big.</p>";
+                  }
+                  else if($_GET["error"] == "unexpectedError"){
+                    echo "<p align='center'>Tere was an error submiting the booking form!</p>";
+                  }
+                }
+                ?>
         </form>
     </div>
 </div>
