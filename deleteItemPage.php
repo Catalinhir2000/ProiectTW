@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <title>CyMaT</title>
     <link rel="shortcut icon" type="image/png" href="images/screwdriver-wrench-solid.svg">
-    <link rel="stylesheet" type="text/css" href="csspages/bookingPage.css">
+    <link rel="stylesheet" type="text/css" href="csspages/deleteItemPage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,6 +30,7 @@
             if($_SESSION["userid"] == 1){
                 echo "<li><a href='profilePage.php'>Appointments</a></li>";
                 echo "<li><a href='postItemPage.php'>Post</a></li>";
+                echo "<li><a href='deleteItemPage.php'>Delete</a></li>";
                 echo "<li><a href='../ProiectTw/includes/logout.inc.php'>Log out</a></li>";
             }
             else if($_SESSION["userid"] != 1){
@@ -47,40 +48,32 @@
     </nav>
     <div class ="interior">
     <div class = "container">
-        <div class = "title">Appointment</div>
-            <form action="" method = "post" enctype="multipart/form-data">
+        <div class = "title">Delete an Item of the Stock Page</div>
+            <form method = "post" action = "../ProiectTW/includes/deleteItem.inc.php">
                 <div class ="user-details">
                     <div class ="input-box">
-                        <span class = "details">Name</span>
-                            <input type = "text" placeholder ="Enter your name" name = "nameUser" required>
-                    </div>
-                    <div class ="input-box">
-                        <span class = "details">User Id</span>
-                            <input type = "text" placeholder ="Enter your User Id" name="uid" required>
-                    </div>
-                    <div class ="input-box">
-                        <span class = "details">E-mail</span>
-                            <input type = "email" placeholder ="Enter your e-mail" name="email" required>
-                    </div>
-                    <div class ="input-box">
-                        <span class = "details">Date and Time</span>
-                            <input type="datetime-local" id="booking" name="booking" name ="date" required>
-                    </div>
-                    <div class ="input-box">
-                        <span class = "details">Images</span>
-                            <input type="file" name="gallery-img" accept="image/png, image/jpg">
-                    </div>
-                    <div class ="input-box">
-                        <span class = "details">Details</span>
-                            <textarea name = "message" placeholder="Write further details" name = "details"></textarea>
+                        <span class = "details">Name of item</span>
+                            <input type = "text" placeholder ="Enter the name of product" name = "nameProduct" required>
                     </div>
                 </div>
                 <div class = "button">
-                    <input type ="submit" value = "Book now">
+                    <input type ="submit" value = "Delete" name = "deleteItem">
                 </div>
+                <?php
+              if(isset($_GET["error"])){
+                  if($_GET["error"]=="statementFailed"){
+                    echo "<p align='center'>Something went wrong, try again!</p>";
+                  }
+                  else if($_GET["error"] == "none"){
+                    echo "<p align='center'>Item deleted succesfully!</p>";
+                  }
+                  else if($_GET["error"] == "itemNotFound"){
+                    echo "<p align='center'>The name you have type is not present in the stock!</p>";
+                  }
+                }
+                ?>
         </form>
     </div>
 </div>
   </body>
 </html>
-

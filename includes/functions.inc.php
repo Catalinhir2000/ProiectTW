@@ -80,6 +80,19 @@ function invalidEmail($email){
     mysqli_stmt_close($statement);
 }
 
+function postItem($conn, $name, $quantity, $image, $details){
+    $sql = "INSERT INTO postitemdb (nameProduct, quantityProduct, imageProduct, detailsProduct) VALUES(?, ?, ?, ?);";
+    $statement= mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($statement, $sql)){
+        header("location:../postItemPage.php?error=statementFailed");
+        exit();
+     }
+    mysqli_stmt_bind_param($statement,"ssss", $name, $quantity, $image, $details);
+    mysqli_stmt_execute($statement);
+    mysqli_stmt_close($statement);
+    header("location:../postItemPage.php?error=none");
+       exit();
+}
 
 function createUser($conn, $name, $username, $email, $password){
     $sql= "INSERT INTO users (userName, userUid, userEmail, userPwd) VALUES (?, ?, ?, ?);";
@@ -100,7 +113,7 @@ function createUser($conn, $name, $username, $email, $password){
 
 function emptyInputLogin($username, $password){
     global $result;
-    if (empty($username) || empty($password)){
+    if(empty($username) || empty($password)){
         $result = true;
     }
     else{
@@ -115,29 +128,58 @@ function console_log( $data ){
     echo '</script>';
   }
 
-function loginUser($conn, $username, $password) {
-    $usernameTaken = usernameTaken($conn, $username);
-    if ($usernameTaken === false){
+function loginUser($conn,$username,$password) {
+    $usernameTaken=usernameTaken($conn,$username);
+    if($usernameTaken === false){
         header("location: ../signInPage.php?error=wrongLogin");
         exit();
 
     }
 
-    $hashedPassword = $usernameTaken["userPwd"];
-    $checkPassword = password_verify($password, $hashedPassword);
+    $hashedPassword=$usernameTaken["userPwd"];
+    $checkPassword= password_verify($password, $hashedPassword);
 
-    if ($checkPassword === false){
+    if($checkPassword===false){
       header("location: ../signInPage.php?error=wrongLogin2");
       exit();
      //console_log($password);
      //console_log($hashedPassword);
      //console_log($checkPassword);
     }
-     else if ($checkPassword === true){
+     else if($checkPassword===true){
         session_start();
-        $_SESSION["userid"] = $usernameTaken["userId"];
-        $_SESSION["useruid"] = $usernameTaken["userUid"];
+        $_SESSION["userid"]=$usernameTaken["userId"];
+        $_SESSION["useruid"]=$usernameTaken["userUid"];
         header("location: ../mainPage.php");
         exit();
     }
-}     
+
+}
+
+
+function deleteItem($conn, $name){
+    $sql = "SELECT * FROM postitemdb WHERE nameProduct = '$name';";
+    $result = mysqli_query($conn, $sql);
+    $resultCheck = mysqli_num_rows($result);
+    if($resultCheck > 0){
+        $sql1 = "DELETE FROM postitemdb WHERE nameProduct = ?;";
+        $statement= mysqli_stmt_init($conn);
+        if(!mysqli_stmt_prepare($statement,$sql1)){
+        header("location:../deleteItemPage.php?error=statementFailed");
+        exit();
+        }
+        mysqli_stmt_bind_param($statement,"s", $name);
+        mysqli_stmt_execute($statement);
+        mysqli_stmt_close($statement);
+        header("location:../deleteItemPage.php?error=none");
+        exit();
+        }
+        else{
+            header("location:../deleteItemPage.php?error=itemNotFound");
+            exit();
+        }
+        header("location:../deleteItemPage.php?error=statementFailed");
+        exit();
+    }
+
+
