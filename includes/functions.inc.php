@@ -94,6 +94,21 @@ function postItem($conn, $name, $quantity, $image, $details){
        exit();
 }
 
+function postBooking($conn, $name, $username, $email, $dateTime, $image, $details){
+    $sql = "INSERT INTO bookingdb (nameBooking, userNameBooking, userEmailBooking, dateTimeBooking, imageBooking, detailsBooking) VALUES(?, ?, ?, ?, ?, ?);";
+    $statement= mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($statement, $sql)){
+        header("location:../bookingPage.php?error=statementFailed");
+        exit();
+     }
+
+    mysqli_stmt_bind_param($statement,"ssssss", $name, $username, $email, $dateTime, $image, $details);
+    mysqli_stmt_execute($statement);
+    mysqli_stmt_close($statement);
+    header("location:../bookingPage.php?error=none");
+       exit();
+}
+
 function createUser($conn, $name, $username, $email, $password){
     $sql= "INSERT INTO users (userName, userUid, userEmail, userPwd) VALUES (?, ?, ?, ?);";
     $statement= mysqli_stmt_init($conn);
