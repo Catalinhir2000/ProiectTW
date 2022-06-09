@@ -197,4 +197,53 @@ function deleteItem($conn, $name){
         exit();
     }
 
+function modifyItem($conn, $name, $quantity){
+    $sql = "SELECT * FROM postitemdb WHERE nameProduct = '$name';";
+    $result = mysqli_query($conn, $sql);
+    $resultCheck = mysqli_num_rows($result);
+    if($resultCheck > 0){
+        $sql1 = "UPDATE postitemdb SET quantityProduct = ? WHERE nameProduct = ?;";
+        $statement= mysqli_stmt_init($conn);
+
+        if(!mysqli_stmt_prepare($statement,$sql1)){
+        header("location:../modifyItemPage.php?error=statementFailed");
+        exit();
+        }
+
+        mysqli_stmt_bind_param($statement,"ss", $quantity, $name);
+        mysqli_stmt_execute($statement);
+        mysqli_stmt_close($statement);
+        header("location:../modifyItemPage.php?error=none");
+        exit();
+        }
+        else{
+            header("location:../modifyItemPage.php?error=itemNotFound");
+            exit();
+        }
+        header("location:../modifyItemPage.php?error=statementFailed");
+        exit();
+}
+
+
+function emptyDeleteForm($name){
+    global $result;
+    if(empty($name)){
+        $result = true;
+    }
+    else{
+        $result = false;
+    }
+    return $result;
+}
+
+function emptyModifyForm($name, $quantity){
+    global $result;
+    if(empty($name) || empty($quantity)){
+        $result = true;
+    }
+    else{
+        $result = false;
+    }
+    return $result;
+}
 
