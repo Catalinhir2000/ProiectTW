@@ -28,9 +28,11 @@
         <?php
            if(isset($_SESSION["useruid"])){
             if($_SESSION["userid"] == 1){
-                echo "<li><a href='profilePage.php'>Appointments</a></li>";
-                echo "<li><a href='postItemPage.php'>Post</a></li>";
-                echo "<li><a href='../ProiectTw/includes/logout.inc.php'>Log out</a></li>";
+              echo "<li><a href='appointments.php'>Appointments</a></li>";
+              echo "<li><a href='postItemPage.php'>Post</a></li>";
+              echo "<li><a href='deleteItemPage.php'>Delete</a></li>";
+              echo "<li><a href='modifyItemPage.php'>Modify</a></li>";
+              echo "<li><a href='../ProiectTw/includes/logout.inc.php'>Log out</a></li>";
             }
             else if($_SESSION["userid"] != 1){
                 echo "<li><a href ='bookingPage.php'>Booking</a></li>";
