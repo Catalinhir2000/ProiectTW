@@ -27,7 +27,7 @@
 		  <?php
             if(isset($_SESSION["useruid"])){
 				if($_SESSION["userid"] == 1){
-					echo "<li><a href='profilePage.php'>Appointments</a></li>";
+					echo "<li><a href='appointments.php'>Appointments</a></li>";
                 	echo "<li><a href='postItemPage.php'>Post</a></li>";
                 	echo "<li><a href='deleteItemPage.php'>Delete</a></li>";
                 	echo "<li><a href='modifyItemPage.php'>Modify</a></li>";
@@ -77,8 +77,27 @@
                             echo $row["detailsBooking"];
                             echo "<br>"; 
                             ?></p>
-							<div class="btn">Approve</div>
-						</div>
+
+							<div class = "container">
+									<form action="" method = "post" enctype="multipart/form-data">
+										<div class ="user-details">
+											<div class ="input-box">
+												<span class = "details">Decision</span>
+													<input type = "text" placeholder ="Enter your decision(aprove/decline)" name = "status" required>
+											</div>
+											
+											<div class ="input-box">
+												<span class = "details">Response</span>
+													<textarea placeholder="Write further details" name = "response"></textarea>
+											</div>
+										</div>
+										<div class = "button">
+											<input type ="submit" value = "Send Response" name = "sendResponse">
+										</div>
+									
+									</form>
+							</div>
+					</div>
 			</div> 
 			<?php
 					}
