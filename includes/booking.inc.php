@@ -17,25 +17,25 @@ if(isset($_POST["BookNow"])){
     $fileSize = $_FILES["image"]["size"];
     $fileError = $_FILES["image"]["error"];
 
-    $folder = "..ProiectTW/images/postItemPictures" . $filename;
-    //move_uploaded_file($tempname, $folder);
+    $folder = '../images/bookingImages/'.$filename;
 
     if($fileError === 0){
         if($fileSize < 100000000){
-            postBooking($conn, $name, $uid, $email, $date, $filename, $details);
             move_uploaded_file($tempname, $folder);
+            postBooking($conn, $name, $uid, $email, $date, $filename, $details);
+            
         } 
         else{
-            header("location:../postItemPage.php?error=sizeTooBig");
+            header("location:../bookingPage.php?error=sizeTooBig");
             exit();
         }
     } 
     else{
-        header("location:../postItemPage.php?error=unexpectedError");
+        header("location:../bookingPage.php?error=unexpectedError");
         exit();
     }
 }
 else{
-    header("location: ../postItemPage.php");
+    header("location: ../bookingPage.php");
     exit();
 }
