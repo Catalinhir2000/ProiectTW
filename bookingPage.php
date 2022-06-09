@@ -48,7 +48,7 @@
     <div class ="interior">
     <div class = "container">
         <div class = "title">Appointment</div>
-            <form action="" method = "post" enctype="multipart/form-data">
+            <form action="../ProiectTW/includes/booking.inc.php" method = "post" enctype="multipart/form-data">
                 <div class ="user-details">
                     <div class ="input-box">
                         <span class = "details">Name</span>
@@ -64,19 +64,19 @@
                     </div>
                     <div class ="input-box">
                         <span class = "details">Date and Time</span>
-                            <input type="datetime-local" id="booking" name="booking" name ="date" required>
+                            <input type="date" id="booking" name ="date" required>
                     </div>
                     <div class ="input-box">
                         <span class = "details">Images</span>
-                            <input type="file" name="gallery-img" accept="image/png, image/jpg">
+                            <input type="file" name="image" accept="image/png, image/jpg">
                     </div>
                     <div class ="input-box">
                         <span class = "details">Details</span>
-                            <textarea name = "message" placeholder="Write further details" name = "details"></textarea>
+                            <textarea placeholder="Write further details" name = "details"></textarea>
                     </div>
                 </div>
                 <div class = "button">
-                    <input type ="submit" value = "Book now">
+                    <input type ="submit" value = "Book now" name = "BookNow">
                 </div>
         </form>
     </div>
