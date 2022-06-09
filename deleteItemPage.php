@@ -31,6 +31,7 @@
                 echo "<li><a href='profilePage.php'>Appointments</a></li>";
                 echo "<li><a href='postItemPage.php'>Post</a></li>";
                 echo "<li><a href='deleteItemPage.php'>Delete</a></li>";
+                echo "<li><a href='modifyItemPage.php'>Modify</a></li>";
                 echo "<li><a href='../ProiectTw/includes/logout.inc.php'>Log out</a></li>";
             }
             else if($_SESSION["userid"] != 1){
@@ -69,6 +70,9 @@
                   }
                   else if($_GET["error"] == "itemNotFound"){
                     echo "<p align='center'>The name you have type is not present in the stock!</p>";
+                  }
+                  else if($_GET["error"] == "emptyInputAtDeleteForm"){
+                    echo "<p align='center'>Empty Input! Please fill it.</p>";
                   }
                 }
                 ?>
