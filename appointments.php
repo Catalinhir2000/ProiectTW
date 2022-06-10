@@ -79,8 +79,12 @@
                             ?></p>
 
 							<div class = "container">
-									<form action="" method = "post" enctype="multipart/form-data">
+									<form action="../ProiectTW/includes/modifyBooking.inc.php" method = "post" enctype="multipart/form-data">
 										<div class ="user-details">
+										<div class ="input-box">
+												<span class = "details">Username</span>
+													<input type = "text" placeholder ="Enter username" name = "username" required>
+											</div>
 											<div class ="input-box">
 												<span class = "details">Decision</span>
 													<input type = "text" placeholder ="Enter your decision(aprove/decline)" name = "status" required>

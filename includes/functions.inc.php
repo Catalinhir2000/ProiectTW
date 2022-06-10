@@ -224,6 +224,35 @@ function modifyItem($conn, $name, $quantity){
         exit();
 }
 
+function modifyBooking($conn, $name, $decision, $response){
+    $sql = "SELECT * FROM bookingdb WHERE userNameBooking = '$name';";
+    $result = mysqli_query($conn, $sql);
+    $resultCheck = mysqli_num_rows($result);
+    if($resultCheck > 0){
+        $sql1 = "UPDATE bookingdb SET statusBooking = ?, responseBooking = ? WHERE userNameBooking = ?;";
+        $statement= mysqli_stmt_init($conn);
+
+        if(!mysqli_stmt_prepare($statement,$sql1)){
+        header("location:../appointments.php?error=statementFailed");
+        exit();
+        }
+
+        mysqli_stmt_bind_param($statement,"sss", $decision, $response, $name);
+        mysqli_stmt_execute($statement);
+        mysqli_stmt_close($statement);
+
+        header("location:../appointments.php?error=none");
+        exit();
+        }
+        else{
+            header("location:../appointments.php?error=userNameNotFound");
+            exit();
+        }
+        header("location:../appointments.php?error=statementFailed");
+        exit();
+    }
+
+
 
 function emptyDeleteForm($name){
     global $result;
