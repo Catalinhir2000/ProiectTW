@@ -51,7 +51,8 @@
 		<div class="view_wrap list-view" style="display: block;">
 				<?php
 					$conn = mysqli_connect("localhost:3306", "root", "", "CyMat");
-					$sql = "SELECT * FROM bookingdb;";
+                    $sessName = $_SESSION["useruid"];
+					$sql = "SELECT * FROM bookingdb WHERE userNameBooking = '$sessName';";
 					$result = mysqli_query($conn, $sql);
 					$resultCheck = mysqli_num_rows($result);
 					if($resultCheck > 0){
@@ -64,10 +65,6 @@
 						</div>
 						<div class="vi_right">
 							<p class="title"><?php
-                             echo $row["nameBooking"];
-                             echo "<br>";
-                             echo $row["userNameBooking"];
-                             echo "<br>";
                              echo $row["userEmailBooking"];
                              echo "<br>"; 
                              ?></p>
@@ -76,31 +73,22 @@
                             echo "<br>";
                             echo $row["detailsBooking"];
                             echo "<br>"; 
+                            echo $row["statusBooking"];
+                            echo "<br>";
+                            echo $row["responseBooking"];
+                            echo "<br>";
+                            ?></p>
+                            <p class="title"><?php
+                             echo "Response: ";
+                             echo "<br>"; 
+                             ?></p>
+                             <p class="content"><?php 
+                            echo $row["statusBooking"];
+                            echo "<br>";
+                            echo $row["responseBooking"];
+                            echo "<br>";
                             ?></p>
 
-							<div class = "container">
-									<form action="../ProiectTW/includes/modifyBooking.inc.php" method = "post" enctype="multipart/form-data">
-										<div class ="user-details">
-										<div class ="input-box">
-												<span class = "details">Username</span>
-													<input type = "text" placeholder ="Enter username" name = "username" required>
-											</div>
-											<div class ="input-box">
-												<span class = "details">Decision</span>
-													<input type = "text" placeholder ="Enter your decision(aprove/decline)" name = "status" required>
-											</div>
-											
-											<div class ="input-box">
-												<span class = "details">Response</span>
-													<textarea placeholder="Write further details" name = "response"></textarea>
-											</div>
-										</div>
-										<div class = "button">
-											<input type ="submit" value = "Send Response" name = "sendResponse">
-										</div>
-									
-									</form>
-							</div>
 					</div>
 			</div> 
 			<?php
@@ -113,4 +101,3 @@
 </div>
 </body>
 </html>
-
