@@ -35,7 +35,6 @@
 				}
 				else if($_SESSION["userid"] != 1){
 					echo "<li><a href ='bookingPage.php'>Booking</a></li>";
-					echo "<li><a href='profilePage.php'>Profile</a></li>";
 					echo "<li><a href='history.php'>History</a></li>";
 					echo "<li><a href='../ProiectTw/includes/logout.inc.php'>Log out</a></li>";
 				}
@@ -64,17 +63,17 @@
 						</div>
 						<div class="vi_right">
 							<p class="title"><?php
-                             echo $row["nameBooking"];
+                             echo "Name: " . $row["nameBooking"];
                              echo "<br>";
-                             echo $row["userNameBooking"];
+                             echo "User name: " . $row["userNameBooking"];
                              echo "<br>";
-                             echo $row["userEmailBooking"];
+                             echo "Email: " . $row["userEmailBooking"];
                              echo "<br>"; 
                              ?></p>
 							<p class="content"><?php 
-                            echo $row["dateTimeBooking"];
+                            echo "Date: " . $row["dateTimeBooking"];
                             echo "<br>";
-                            echo $row["detailsBooking"];
+                            echo "Details: " . $row["detailsBooking"];
                             echo "<br>"; 
                             ?></p>
 

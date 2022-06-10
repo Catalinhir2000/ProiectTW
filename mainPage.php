@@ -36,7 +36,6 @@
               }
               else if($_SESSION["userid"] != 1){
                 echo "<li><a href ='bookingPage.php'>Booking</a></li>";
-                echo "<li><a href='profilePage.php'>Profile</a></li>";
                 echo "<li><a href='history.php'>History</a></li>";
                 echo "<li><a href='../ProiectTw/includes/logout.inc.php'>Log out</a></li>";
               }
