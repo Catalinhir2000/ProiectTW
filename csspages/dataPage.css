@@ -1,0 +1,35 @@
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    scroll-padding-top: 1rem;
+}
+
+.content-table{
+    margin:0 auto;
+    font-size:1em;
+    min-width: 700px;
+    border-collapse: collapse;
+}
+
+.content-table thead tr{
+    background-color: #F7770F;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.content-table th, 
+.content-table td{
+    padding: 12px 15px;
+}
+
+.content-table tbody tr{
+    border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:last-of-type{
+    border-bottom: 2px solid #F7770F;
+}
