@@ -40,53 +40,194 @@
       </dl>
     </div>
 
-    <section id="abstract" typeof="sa:Abstract" role="doc-abstract">
-      <h2>Cerința</h2>
-      <p></p>
-      <b>CyMaT (Cycling Maintenance Web Tool)</b>
-      <br />
-      <p>
-        Creați un sistem online de management al programărilor și stocurilor unui operatii de service de motociclete, biciclete, trotinete (electrice sau nu). <br>
-        Fiecare client va consulta calendarul service-ului, iar apoi va completa un formular cu data și ora dorită, plus detalii despre problemă, putând adăuga inclusiv fișiere multimedia (imagini și filme). <br>
-        Administratorul afacerii va putea respinge programarea adăugând un mesaj explicativ: "Ne pare rău, dar nu avem în stoc piesele necesare pentru reparație, reveniți în S săptămâni" sau o va putea aproba, oferind și un preț estimativ, plus alte detalii de interes. <br>
-        De asemenea, aplicația îi va permite acestuia să țină evidența stocurilor existente, cât și a comenzilor date către furnizori. Sistemul va putea importa date în format CSV și JSON. Pentru exportul datelor, se va recurge la oricare dintre formatele CSV, JSON, PDF. Bonus: simularea activitatii service-ului pe o perioada de timp: luni/ani. <br>
-      </p>
-      <p></p>
-    </section>
-    <section id="dataBase">
-      <h2>Baza de date</h2>
-      <p>Va fi folosită pentru evidența conturilor, programărilor și pentru produsele care se află în secțiunea "Stock".</p>
-    </section>
-    <section id="cont">
-      <h2>Profilul unui utilizator</h2>
-      <p>CyMaT va avea pe viitor o secțiune pentru profilul utilizatorul în care vor fi afișate datele acestuia și istoricul său de programări.</p>
-    </section>
-    <section id="home">
-      <h2>Pagina principală(Home)</h2>
-      <p>Utilizatorul poate sa acceseze celelalte pagini(Booking, Stock, Login).</p>
-    </section>
-    <section id="booking">
-      <h2>Pagina Booking</h2>
-      <p>Utilizatorul va trebui să completeze un formular prin care acesta își introduce datele, atât fișiere media de tip .png și .jpg pentru a semnala problemele pe care le întâmpină la vehiculul său, cât și o rubrică de informații suplimentare care nu este obligatorie.
-      <br> În momentul în care apasă pe butonul de a face rezervarea, acesta va fi introdus în baza de date și va aștepta o confirmare de la admin.</p>
-      <p>Adminul în pagina de booking va avea o listă a utilizatorilor care și-au făcut programare, listă care va fi furnizată de baza de date, iar adminul va putea să respingă programarea sau să o accepte.</p>
-    </section>
-    <section id="stock">
-      <h2>Pagina Stock</h2>
-      <p>Utilizatorul va putea să consulte starea depozitului de piese moto, cât și de consumabile.</p>
-      <p>Adminul în această pagină de Stock, va avea un buton prin care acestuia i se va permite să adauge un produs.</p>
-    </section>
-    <section id="login">
-      <h2>Login</h2>
-      <p>Logarea se poate face cu E-mail și parolă unice.</p>
-      <p>Aceasta nu este permisă dacă nu sunt completate toate câmpurile prezente în mod corect.</p>
-      <p>De asemenea, vor fi două categorii speciale de utilizatori, anume: cont de admin și cont de utilizator obișnuit.</p>
-      <p>Adminul va avea la dispoziție mai multe facilități prin care îi va face posibilă interecțiunea cu utilizatorii site-ului.</p>
-    </section>
-    <section id="inreg">
-      <h2>Înregistrarea</h2>
-      <p>Înregistrarea se face respectând cerințele în care se introduce un username, E-mail și o parolă și pentru a putea fi siguri că utilizatorul a introdus parola pe care o dorea, mai este un câmp pentru repetarea parolei.
-      <br> După introducerea datelor corecte, utilizatorul va fi nevoit să introducă datele de conectare în secțiunea Login.</p>
-    </section>
+    <!-- Cuprins-->
+    <section class="content">
+
+    
+      <ol>
+          
+          <li>
+              <a href="#introduction">Introduction</a>
+              <ol>
+                  <li><a href="#purpose">Purpose</a></li>
+                  <li><a href="#documentConventions"> Document Conventions</a></li>
+                  <li><a href="#intendedAud"> Intended Audience </a></li>
+                  <li><a href="#productScope"> Product Scope</a></li>
+                  <li><a href="#references">References</a></li>
+              </ol>
+          </li>
+          <li>
+              <a href="#overallDescription">Overall Description</a>
+              <ol>
+                  <li><a href="#productPerspective"> Product perspective</a></li>
+                  <li><a href="#productFunctions"> Product Functions</a></li>
+                  <li><a href="#operatingEnvironment">Operating Environment</a></li>
+                  <li><a href="#design"> Design and Implementation Constraints </a></li>
+                  <li><a href="#assumptions"> Assumptions and Dependencies </a></li>
+  
+              </ol>
+          </li>
+          <li>
+              <a href="#externalRequirements"> External Interface Requirements</a>
+              <ol>
+                  <li><a href="#userInterface"> User interface</a></li>
+                  <li><a href="#hardwareInterfaces"> Hardware Interfaces</a></li>
+                  <li><a href="#softwareInterfaces"> Software interfaces</a></li>
+                  <li><a href="#communicationInterface">Communication interfaces</a></li>
+              </ol>
+          </li>
+          <li>
+              <a href="#systemFeatures">System Features</a>
+              <ol>
+                  <li><a href="#register">Register</a></li>
+                  <li><a href="#login">Log in</a></li>
+                  <li><a href="#uploadCode">Upload code</a></li>
+                  <li><a href="#editProject">Edit Project</a></li>
+                  <li><a href="#editPrivacy">Edit Privacy</a></li>
+                  <li><a href="#syntaxHighlights">Syntax Highlights</a></li>
+                              </ol>
+          </li>
+          <li>
+              <a href="#nonfunctionalFeatures">Nonfunctional Features</a>
+              <ol>
+                  <li><a href="#security">Security</a></li>
+              </ol>
+          </li>
+          <li>
+              <a href="#bibliography">Bibliography</a>
+          </li>
+          <li>
+              <a href="#authors">Authors</a>
+          </li>
+      </ol>
+  
+      <section id="introduction">
+          <h2>Introduction</h2>
+          <h3 id="purpose">Purpose</h3>
+          <p>
+              Cymat is an online management system for scheduling and stocking a motorcycle service operation. 
+          </p>
+          <h3 id="documentConventions"> Document Conventions</h3>
+          <p>
+              TODO
+          </p>
+          <h3 id="intendedAud"> Intended Audience </h3>
+          <p>
+              This web application is intended for any user that wants to manage a motorcycle service operation.
+          </p>
+          <h3 id="productScope"> Product Scope</h3>
+          <p>
+              The scope of this application is to easly manage a motorcycle service. Each client will consult the service's calendar and stock the service's equipment, after this they will
+              be able to schedule a service operation by filling out a form with the date and time they prefer and some details about the problem. The administrator will then be able to
+              either accept or decline the request.  
+          </p>
+          <h3 id="references"> References</h3>
+          <p>
+              We inspired from day-to-day work and needs in an auto service. We didn't have any other website as a model.
+          </p>
+      </section>
+  
+      <section id="overallDescription">
+          <h2>Overall description</h2>
+          <h3 id="productPerspective"> Product Perspective</h3>
+          <p>
+              The product is a new, self-contained one, inspired in many ways by the day to day work in the field of maintenance, and is built for university purposes.
+          </p>
+          <h3 id="productFunctions">Product Functions</h3>
+          <ul style="list-style-type:disc">
+              <li> Register and Log in </li>
+              <li> Scheduling a service operation </li>
+              <li> Check the service's stock</li>
+              <li> The possibility to navigate without an account</li>
+              <li> View the history of your appointments in the service.</li>
+               As the administrator of the website you will additionally be able to:
+              <li> View a list with all the appointments.</li>
+              <li> You will have the ability to respond to appointments individually</li>
+              <li> Update the service's stock, add, remove items or change the quantity of the parts.</li>
+          </ul>
+          <h3 id="operatingEnvironment"> Operating Environment</h3>
+          <p>
+              The software will operate in any web browser and will be available for all operating systems.
+          </p>
+          <h3 id="design"> Design and Implementation Constraints</h3>
+          <ul style="list-style-type:disc">
+              <li>Interface built with only HTML and CSS</li>
+              <li>Mysql database</li>
+              <li>No helping tools</li>
+              <li>Limited language options(HTML,CSS,PHP)</li>
+          </ul>
+      </section>
+      <section id="externalRequirements">
+          <h2>External Interface Requirements</h2>
+          <h3 id="userInterface"> User Interfaces</h3>
+          <p>The user will have the possibility to sign in with his account or to create a new one with his name, email, username and password by pressing the Signup now button. </p>
+          <img src="../images/scholarly/SignIn.png" alt="ss" style="width:40%;height:20%">
+          <p>Also, an user will be able to check the service's stock by going to the "Stock" page.</p>
+          <img src="images/edit.png" alt="ss" style="width:80%;height:50%">
+            <p>The user will be able to schedule a service operation by filling out a form with the date and time they prefer and some details about the problem by going to "Booking" page. </p>
+            <img src="../images/scholarly/booking.png" alt="ss" style="width:40%;height:20%">
+            <p>The user will be able to view the history of his appointments in the service by going to the "History" page.</p>
+            <img src="../images/scholarly/history.png" alt="ss" style="width:40%;height:20%">
+          <h3 id="hardwareInterfaces"> Hardware, Software and Communication Interfaces</h3>
+          <p>
+              The functions and features will be made using PHP database and Javascript.
+          </p>
+      </section>
+  
+      <section id="systemFeatures">
+          <h2>System Features</h2>
+          <h3 id="register"> Register</h3>
+          <p>
+              The "Register" feature will let the user to create an account with his name, email, username and password so he can connect to the web application.
+          </p>
+          <h3 id="login"> Log In</h3>
+          <p>
+              The "Log In" feature will let the user to sign in to application with his created accound, by introducing his username and password.
+          </p>
+          <h3 id="scheduleAppointment"> Schedule Appointment</h3>
+          <p>
+              The Schedule an Appointment feature will let the user to complete a form to requets a service operation. The administrator will respond to the request later.
+          </p>
+          <h3 id="viewStock"> View Stock</h3>
+          <p>
+              The "View Stock" feature will let the user to check the actual stock of the service.
+          </p>
+          <h3 id="history"> View history</h3>
+          <p>
+              The "View History" feature will let the user to view check the status of his appointments. 
+          </p>
+          <h3 id="viewAppointments"> View Appointments</h3>
+          <p>
+              The "View Appointments" feature will let the administrator to see all the appointments and answer to them.
+          </p>
+          <h3 id="updateStock"> Update Stock</h3>
+          <p>
+              The "Update Stock" feature will  let the administrator to update the actual stock by adding or deleteing items or by changing the quantity of them.
+          </p>
+
+          
+      </section>
+  
+      <section id="nonfunctionalFeatures">
+          <h2 id="security"> Security</h2>
+          <p>
+          The account security is provided by each user's choice for password.</p>
+      </section>
+  
+      <section id="bibliography">
+          <h2>Bibliography</h2>
+      </section>
+  
+      <section id="authors">
+          <h2>Authors</h2>
+          Sircu Catalin-Alexandru
+          <br>
+          Hirean Catalin-Alexandru
+      </section>
+  
+  
+  
+  
+  </section>
   </body>
 </html>
