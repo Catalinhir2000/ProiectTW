@@ -72,10 +72,6 @@
                             echo "<br>";
                             echo $row["detailsBooking"];
                             echo "<br>"; 
-                            echo $row["statusBooking"];
-                            echo "<br>";
-                            echo $row["responseBooking"];
-                            echo "<br>";
                             ?></p>
                             <p class="title"><?php
                              echo "Response: ";
