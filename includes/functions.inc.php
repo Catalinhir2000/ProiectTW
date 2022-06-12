@@ -276,3 +276,14 @@ function emptyModifyForm($name, $quantity){
     return $result;
 }
 
+function emptyAppointmentsForm($name, $decision, $response){
+    global $result;
+    if(empty($name) || empty($decision) || empty($response)){
+        $result = true;
+    }
+    else{
+        $result = false;
+    }
+    return $result;
+}
+
