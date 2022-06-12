@@ -19,24 +19,15 @@
         </div>
       </div>
 
-      <h1>Interfața și arhitectura proiectului</h1>
     </header>
     <div role="contentinfo">
       <dl>
-        <dt>Autori</dt>
-        <dd>Hirean Cătălin Alexandru și Sîrcu Cătălin Alexandru</dd>
         <dt>GitHub</dt>
         <dd>
           <a href="https://github.com/Catalinhir2000/ProiectTW"
             >Link către repository-ul proiectului</a
           >
         </dd>
-        <dt>Tehnologii folosite</dt>
-        <dd>HTML, CSS, PHP</dd>
-        <dt>
-          Proiect realizat în cadrul cursului "Tehnologii Web" de la Facultatea
-          de Informatică, Universitatea "Al. I. Cuza" Iași.
-        </dt>
       </dl>
     </div>
 
@@ -70,7 +61,7 @@
           <li>
               <a href="#externalRequirements"> External Interface Requirements</a>
               <ol>
-                  <li><a href="#userInterface"> User interface</a></li>
+                  <li><a href="#userInterface"> User Interfaces / User's guide</a></li>
                   <li><a href="#hardwareInterfaces"> Hardware Interfaces</a></li>
                   <li><a href="#softwareInterfaces"> Software interfaces</a></li>
                   <li><a href="#communicationInterface">Communication interfaces</a></li>
@@ -81,10 +72,11 @@
               <ol>
                   <li><a href="#register">Register</a></li>
                   <li><a href="#login">Log in</a></li>
-                  <li><a href="#uploadCode">Upload code</a></li>
-                  <li><a href="#editProject">Edit Project</a></li>
-                  <li><a href="#editPrivacy">Edit Privacy</a></li>
-                  <li><a href="#syntaxHighlights">Syntax Highlights</a></li>
+                  <li><a href="#scheduleAppointment">Schedule Appointment</a></li>
+                  <li><a href="#viewStock">View Stock</a></li>
+                  <li><a href="#history">View history</a></li>
+                  <li><a href="#viewAppointments">View Appointments</a></li>
+                  <li><a href="#updateStock">Update Stock</a></li>
                               </ol>
           </li>
           <li>
@@ -159,18 +151,27 @@
       </section>
       <section id="externalRequirements">
           <h2>External Interface Requirements</h2>
-          <h3 id="userInterface"> User Interfaces</h3>
+          <h3 id="userInterface"> User Interfaces / User's guide </h3>
           <p>The user will have the possibility to sign in with his account or to create a new one with his name, email, username and password by pressing the Signup now button. </p>
           <img src="../images/scholarly/SignIn.png" alt="ss" style="width:40%;height:20%">
           <p>Also, an user will be able to check the service's stock by going to the "Stock" page.</p>
-          <img src="images/edit.png" alt="ss" style="width:80%;height:50%">
+          <img src="../images/scholarly/stock.png" alt="ss" style="width:40%;height:20%">
             <p>The user will be able to schedule a service operation by filling out a form with the date and time they prefer and some details about the problem by going to "Booking" page. </p>
             <img src="../images/scholarly/booking.png" alt="ss" style="width:40%;height:20%">
             <p>The user will be able to view the history of his appointments in the service by going to the "History" page.</p>
             <img src="../images/scholarly/history.png" alt="ss" style="width:40%;height:20%">
+            <p>Additionally the administrator will be able to: </p>
+            <p>View a list with all the appointments and respond to them by going to the Appointments page and complete a form for each appointment individually.</p>
+            <img src="../images/scholarly/appointments.png" alt="ss" style="width:40%;height:20%">
+            <p>Post a new Item in the stock by going to "Post" page and complete the formular.</p>
+            <img src="../images/scholarly/post.png" alt="ss" style="width:40%;height:20%">
+            <p>Delete an item from the stock by going to "Delete" page and giving the product name.</p>
+            <img src="../images/scholarly/delete.png" alt="ss" style="width:40%;height:20%">
+            <p>Update the quantity of an item from the stock by going to "Modify" page and complete the form giving the name of the product and the quantity you want.</p>
+            <img src="../images/scholarly/modify.png" alt="ss" style="width:40%;height:20%">
           <h3 id="hardwareInterfaces"> Hardware, Software and Communication Interfaces</h3>
           <p>
-              The functions and features will be made using PHP database and Javascript.
+              The functions and features will be implemented using PHP and Mysql database.
           </p>
       </section>
   
@@ -213,6 +214,28 @@
           <p>
           The account security is provided by each user's choice for password.</p>
       </section>
+
+        <section id="progress">
+            <h2>Stages of project development and our progress</h2>
+            <h3>Thinking of the functionalities and feature needed.</h3>
+            <p>
+                We have started to think of the functionalities and features that we need to provide to the user and write them down.
+            </p>
+            <h3>Interface of the application</h3>
+            <p>
+                We have started to design the interface of the application for the needs of the user and to be able to implement the features.
+            </p>
+            <h3>Implementation of the features</h3>
+            <p>
+                1. We first implemented the login and register feature and data base table of users. <br>
+                2. We implemented the feature to view the actual stock of the service and then to be able to be updated by the administrator, and created the database table for the items. <br>
+                3. We implementd the feature to schedule and appointment for a service operation and the administrator to answer to the client's request for an appointment and the database table for the appointments. <br>
+                4. We implement the feature to view the history of the appointments for each user. <br>
+                5. We populate the tables and test the applications.
+            </p>
+
+            
+        </section>    
   
       <section id="bibliography">
           <h2>Bibliography</h2>
