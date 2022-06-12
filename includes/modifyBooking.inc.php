@@ -9,10 +9,10 @@ if(isset($_POST["sendResponse"])){
     require_once '../includes/dbConnection.inc.php';
     require_once '../includes/functions.inc.php';
 
-    // if(emptyAppointmentsForm($name, $quantity)){
-    //     header("location:../appointments.php?error=emptyInputAtModifyAppointmentsForm");
-    //     exit();
-    // }
+     if(emptyAppointmentsForm($name, $decision, $response)){
+         header("location:../appointments.php?error=emptyInputAtModifyAppointmentsForm");
+         exit();
+     }
 
     modifyBooking($conn, $name, $decision, $response);
 }
