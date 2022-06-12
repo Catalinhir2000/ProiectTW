@@ -49,7 +49,7 @@
 	<div class="view_main">
 		<div class="view_wrap list-view" style="display: block;">
 				<?php
-					$conn = mysqli_connect("localhost:3307", "CATALIN", "CATALIN", "CyMat");
+					 $conn = mysqli_connect("localhost:3306", "root", "", "CyMat");
 					$sql = "SELECT * FROM postitemdb;";
 					$result = mysqli_query($conn, $sql);
 					$resultCheck = mysqli_num_rows($result);
@@ -69,6 +69,9 @@
 			</div> 
 			<?php
 					}
+				}
+				else{
+					echo "<h1 align = 'center'> The stock market is empty, stay tuned!</h1>";
 				}
 			?>
 		</div>
