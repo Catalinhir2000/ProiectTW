@@ -25,6 +25,7 @@
       <ul>
         <li><a class ="active" href ="mainPage.php">Home</a></li>
         <li><a href ="stockPage.php">Stock</a></li>
+        <li><a href="../ProiectTw/extras/scholarly.html">Documentation</a></li>
         <?php
             if(isset($_SESSION["useruid"])){
               if($_SESSION["userid"] == 1){
