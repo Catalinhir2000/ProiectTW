@@ -89,6 +89,9 @@
 			<?php
 					}
 				}
+				else{
+					echo " <h1 align = 'center'> No appointments yet </h1>";
+				}
 			?>
 		</div>
 	</div>
